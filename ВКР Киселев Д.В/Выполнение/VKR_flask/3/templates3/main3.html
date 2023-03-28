@@ -1,0 +1,57 @@
+<!doctype html>
+
+<style>
+    form {
+        margin: auto;
+        width: 35%;
+    }
+    
+    .result {
+        margin: auto;
+        width: 35%;
+        border: 1px solid #ccc;
+    }
+</style>
+
+<head>
+    <title>Приложение 3</title>
+</head>
+
+<form action="{{url_for('main3')}}" method="POST">
+    <fieldset>
+        <legend>Нейронная сеть для предсказания cоотношения матрица-наполнитель</legend><br>
+        Плотность, кг/м3
+        <input name="feature1" type="number" required><br><br>
+        модуль упругости, ГПа
+        <input name="feature2" type="number" required><br><br>
+        Количество отвердителя, м.%
+        <input name="feature3" type="number" required><br><br>
+        Содержание эпоксидных групп
+        <input name="feature4" type="number" required><br><br>
+        Температура вспышки, С_2
+        <input name="feature5" type="number" required><br><br>
+        Поверхностная плотность, г/м2
+        <input name="feature6" type="number" required><br><br>
+        Модуль упругости при растяжении, ГПа
+        <input name="feature7" type="number" required><br><br>
+        Прочность при растяжении, МПа
+        <input name="feature8" type="number" required><br><br>
+        Потребление смолы, г/м2
+        <input name="feature9" type="number" required><br><br>
+        Угол нашивки, град
+        <input name="feature10" type="number" required><br><br>
+        Шаг нашивки
+        <input name="feature11" type="number" required><br><br>
+        Плотность нашивки
+        <input name="feature12" type="number" required><br><br>
+        <input type="submit">
+    </fieldset>
+</form>
+
+<div class="result" align="center">
+    {% if result %}
+        <br>
+        <p style="font-size: 50px;">Соотношение матрица-наполнитель</p>
+        <p style="font-size: 50px;">{{result}}</p>
+    {% endif %}
+</div>
